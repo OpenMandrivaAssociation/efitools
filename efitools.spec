@@ -11,6 +11,7 @@ Patch0:         fix-spelling-error.patch
 BuildRequires:	help2man
 BuildRequires:	gnu-efi
 BuildRequires:	perl-File-Slurp
+BuildRequires:	binutils
 
 %description	
 Tools for creating and manipulating signed efi binaries 
@@ -22,7 +23,8 @@ for systems with secure boot bioses
 #export CC=gcc
 #export CXX=g++
 %build
-%make_build CC=gcc LD=/usr/bin/ld.bfd
+%make_build 
+#CC=gcc LD=/usr/bin/ld.bfd
  
 %install
 %make_install
