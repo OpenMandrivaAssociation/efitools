@@ -7,7 +7,7 @@ License:        GPLv2+
 URL:            https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git
 Source0:        https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git/snapshot/efitools-%{version}.tar.gz
 Patch0:         fix-spelling-error.patch
-#BuildRequires:	sbsigntools
+
 BuildRequires:	help2man
 BuildRequires:	gnu-efi
 BuildRequires:	perl-File-Slurp
@@ -23,7 +23,7 @@ for systems with secure boot bioses
 %autosetup -p1
 
 %build
-%make_build CC=gcc LD=/usr/bin/ld.bfd
+%make CC=gcc LD=/usr/bin/ld.bfd
  
 %install
 %make_install
