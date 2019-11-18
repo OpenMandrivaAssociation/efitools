@@ -12,6 +12,7 @@ BuildRequires:	help2man
 BuildRequires:	gnu-efi
 BuildRequires:	perl-File-Slurp
 BuildRequires:	binutils-devel
+BuildRequires:	pkgconfig(openssl)
 
 %description	
 Tools for creating and manipulating signed efi binaries 
