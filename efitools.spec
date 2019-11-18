@@ -20,11 +20,8 @@ for systems with secure boot bioses
 %prep
 %autosetup -p1
 
-#export CC=gcc
-#export CXX=g++
 %build
-%make_build 
-#CC=gcc LD=/usr/bin/ld.bfd
+%make_build CC=gcc LD=/usr/bin/ld.bfd
  
 %install
 %make_install
