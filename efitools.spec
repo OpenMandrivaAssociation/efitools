@@ -11,7 +11,7 @@ Patch0:         fix-spelling-error.patch
 BuildRequires:	help2man
 BuildRequires:	gnu-efi
 BuildRequires:	perl-File-Slurp
-BuildRequires:	binutils
+BuildRequires:	binutils-devel
 
 %description	
 Tools for creating and manipulating signed efi binaries 
