@@ -13,6 +13,7 @@ BuildRequires:	gnu-efi
 BuildRequires:	perl-File-Slurp
 BuildRequires:	binutils-devel
 BuildRequires:	pkgconfig(openssl)
+Buildrequires:	sbsigntools
 
 %description	
 Tools for creating and manipulating signed efi binaries 
