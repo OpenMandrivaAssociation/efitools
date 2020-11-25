@@ -1,6 +1,6 @@
 Name:           efitools
 Version:        1.9.2
-Release:        1
+Release:        2
 Summary:        Tools for secure booting efi images
 Group:          System
 License:        GPLv2+
@@ -13,7 +13,7 @@ BuildRequires:	gnu-efi
 BuildRequires:	perl-File-Slurp
 BuildRequires:	binutils-devel
 BuildRequires:	pkgconfig(openssl)
-Buildrequires:	sbsigntools
+BuildRequires:	sbsigntools
 
 %description	
 Tools for creating and manipulating signed efi binaries 
@@ -23,7 +23,7 @@ for systems with secure boot bioses
 %autosetup -p1
 
 %build
-%make CC=gcc LD=/usr/bin/ld.bfd
+%make_build CC=gcc LD=/usr/bin/ld.bfd
  
 %install
 %make_install
@@ -43,5 +43,3 @@ for systems with secure boot bioses
 %{_datadir}/efitools/efi/SetNull.efi
 %{_datadir}/efitools/efi/ShimReplace.efi
 %{_datadir}/efitools/efi/UpdateVars.efi
-
-
