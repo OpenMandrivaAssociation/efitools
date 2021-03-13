@@ -8,7 +8,7 @@ URL:		https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git
 Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git/snapshot/efitools-%{version}.tar.gz
 Patch0:		fix-spelling-error.patch
 ExclusiveArch:	%{efi}
-BuildRequires:	efi-rpm-macros
+BuildRequires:	efi-srpm-macros
 BuildRequires:	help2man
 BuildRequires:	gnu-efi
 BuildRequires:	perl-File-Slurp
@@ -22,7 +22,7 @@ Requires:	util-linux
 Recommends:	sbsigntools
 
 %description
-Tools for creating and manipulating signed efi binaries 
+Tools for creating and manipulating signed efi binaries
 for systems with secure boot bioses
 
 %prep
