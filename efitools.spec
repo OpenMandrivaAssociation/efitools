@@ -1,21 +1,27 @@
-Name:           efitools
-Version:        1.9.2
-Release:        2
-Summary:        Tools for secure booting efi images
-Group:          System
-License:        GPLv2+
-URL:            https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git
-Source0:        https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git/snapshot/efitools-%{version}.tar.gz
-Patch0:         fix-spelling-error.patch
-
+Name:		efitools
+Version:	1.9.2
+Release:	3
+Summary:	Tools for secure booting efi images
+Group:		System
+License:	GPLv2+
+URL:		https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git
+Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git/snapshot/efitools-%{version}.tar.gz
+Patch0:		fix-spelling-error.patch
+ExclusiveArch:	%{efi}
+BuildRequires:	efi-rpm-macros
 BuildRequires:	help2man
 BuildRequires:	gnu-efi
 BuildRequires:	perl-File-Slurp
 BuildRequires:	binutils-devel
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	sbsigntools
+Requires:	coreutils
+Requires:	mtools%
+Requires:	parted
+Requires:	util-linux
+Recommends:	sbsigntools
 
-%description	
+%description
 Tools for creating and manipulating signed efi binaries 
 for systems with secure boot bioses
 
@@ -23,10 +29,11 @@ for systems with secure boot bioses
 %autosetup -p1
 
 %build
-%make_build CC=gcc LD=/usr/bin/ld.bfd
+%set_build_flags
+%make_build
  
 %install
-%make_install
+%make_install DOCDIR=%{buildroot}%{_docdir}/%{name}/ CFLAGS="%{optflags}"
 
 %files
 %doc COPYING README 
