@@ -1,3 +1,5 @@
+%define _disable_lto 1
+
 Name:		efitools
 Version:	1.9.2
 Release:	3
