@@ -15,6 +15,7 @@ BuildRequires:	perl-File-Slurp
 BuildRequires:	binutils-devel
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	sbsigntools
+BuildRequires:	gcc
 Requires:	coreutils
 Requires:	mtools%
 Requires:	parted
@@ -30,8 +31,8 @@ for systems with secure boot bioses
 
 %build
 %set_build_flags
-%make_build
- 
+%make_build CC=gcc LD=ld.bfd
+
 %install
 %make_install DOCDIR=%{buildroot}%{_docdir}/%{name}/ CFLAGS="%{optflags}"
 
