@@ -1,6 +1,6 @@
 Name:		efitools
 Version:	1.9.2
-Release:	3
+Release:	4
 Summary:	Tools for secure booting efi images
 Group:		System
 License:	GPLv2+
@@ -17,7 +17,7 @@ BuildRequires:	binutils-devel
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	sbsigntools
 Requires:	coreutils
-Requires:	mtools%
+Requires:	mtools
 Requires:	parted
 Requires:	util-linux
 Recommends:	sbsigntools
@@ -59,4 +59,3 @@ rm -f %{buildroot}/%{_bindir}/efitool-mkusb
 %doc COPYING README 
 %{_bindir}/*
 %doc %{_mandir}/man1/*
-
