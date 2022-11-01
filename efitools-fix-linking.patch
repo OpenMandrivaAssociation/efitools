@@ -1,0 +1,12 @@
+diff -Naur efitools-1.9.2/Make.rules efitools-1.9.2.tpg/Make.rules
+--- efitools-1.9.2/Make.rules	2019-01-08 22:13:13.000000000 +0000
++++ efitools-1.9.2.tpg/Make.rules	2022-11-01 19:25:57.362909564 +0000
+@@ -24,7 +24,7 @@
+ # there's a bug in the gnu tools ... the .reloc section has to be
+ # aligned otherwise the file alignment gets screwed up
+ LDSCRIPT	= elf_$(ARCH)_efi.lds
+-LDFLAGS		+= -shared -Bsymbolic $(CRTOBJS) -L $(CRTPATH) -L /usr/lib -L /usr/lib64 -T $(LDSCRIPT)
++LDFLAGS		+= -shared -Bsymbolic -znorelro $(CRTOBJS) -L $(CRTPATH) -L /usr/lib64 -T $(LDSCRIPT)
+ LOADLIBES	= -lefi -lgnuefi $(shell $(CC) $(ARCH3264) -print-libgcc-file-name)
+ FORMAT		= --target=efi-app-$(ARCH)
+ OBJCOPY		= objcopy
