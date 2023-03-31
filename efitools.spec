@@ -3,7 +3,7 @@
 Summary:	Tools for secure booting efi images
 Name:		efitools
 Version:	1.9.2
-Release:	5
+Release:	6
 Group:		System
 License:	GPLv2+
 URL:		https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git
